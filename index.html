@@ -1,65 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>is Tiya ur favourite person?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favourite</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #fce4ec;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-family: Arial;
     }
-    h1 {
-      color: #d81b60;
-    }
+
     button {
-      padding: 15px 30px;
-      font-size: 20px;
-      margin: 20px;
-      cursor: pointer;
-      border-radius: 10px;
-      border: none;
-      transition: all 0.3s ease;
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 10px;
     }
-    #yesBtn {
-      background-color: #4caf50;
-      color: white;
-    }
-    #noBtn {
-      background-color: #f44336;
-      color: white;
-      position: relative;
+
+    #no {
+      position: absolute;
     }
   </style>
 </head>
 <body>
 
-<h1>is Tiya your favourite person?</h1>
-<button id="yesBtn">Yes</button>
-<button id="noBtn">No</button>
+  <h1>Is Tiya your favourite person?</h1>
 
-<script>
-const yesBtn = document.getElementById('yesBtn');
-const noBtn = document.getElementById('noBtn');
+  <!-- YES = link -->
+  <a href="page2.html">
+    <button>Yes</button>
+  </a>
 
-// Yes button click -> open next page
-yesBtn.onclick = () => {
-  window.location.href = "./page2.html";
-}
+  <!-- NO = bhaagne wala -->
+  <button id="no">No</button>
 
-// No button hover -> rotate randomly
-noBtn.onmouseover = () => {
-  const x = Math.floor(Math.random() * 80) - 40; // -40 to 40 px horizontal
-  const y = Math.floor(Math.random() * 80) - 40; // -40 to 40 px vertical
-  noBtn.style.transform = translate(${x}px, ${y}px) rotate(${Math.floor(Math.random()*360)}deg);
-}
-</script>
+  <script>
+    const no = document.getElementById("no");
+    no.onmouseover = function () {
+      no.style.left = Math.random() * 300 + "px";
+      no.style.top = Math.random() * 300 + "px";
+    };
+  </script>
 
 </body>
 </html>
